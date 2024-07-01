@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.hud {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 8px;
+  font-family: 'Arial', sans-serif;
+}
+
+.hud h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.hud p {
+  margin: 5px 0 0;
+  font-size: 14px;
+}
+
+a-scene {
+  width: 100vw;
+  height: 100vh;
+  display: block;
+}
+
+a-sky {
+  animation: skyAnimation 30s linear infinite;
+}
+
+a-plane {
+  animation: planeAnimation 60s linear infinite;
+}
+
+@keyframes skyAnimation {
+  0% { color: #87CEEB; }
+  50% { color: #FFD700; }
+  100% { color: #87CEEB; }
+}
+
+@keyframes planeAnimation {
+  0% { color: #7BC8A4; }
+  50% { color: #228B22; }
+  100% { color: #7BC8A4; }
+}
+
+a-entity, a-torus, a-dodecahedron {
+  transition: transform 0.3s ease-in-out;
+}
+
+a-entity:hover, a-torus:hover, a-dodecahedron:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 600px) {
+  .hud {
+    font-size: 12px;
+    padding: 5px;
+  }
+
+  .hud h1 {
+    font-size: 18px;
+  }
+
+  .hud p {
+    font-size: 10px;
+  }
+}
