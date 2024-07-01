@@ -51,26 +51,3 @@ a-plane {
   50% { color: #228B22; }
   100% { color: #7BC8A4; }
 }
-
-a-entity, a-torus, a-dodecahedron {
-  transition: transform 0.3s ease-in-out;
-}
-
-a-entity:hover, a-torus:hover, a-dodecahedron:hover {
-  transform: scale(1.1);
-}
-
-@media (max-width: 600px) {
-  .hud {
-    font-size: 12px;
-    padding: 5px;
-  }
-
-  .hud h1 {
-    font-size: 18px;
-  }
-
-  .hud p {
-    font-size: 10px;
-  }
-}
