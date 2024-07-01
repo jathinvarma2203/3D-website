@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Expansive 3D Website with A-Frame</title>
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@6.1.1/dist/aframe-extras.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a-scene physics="gravity: -9.8" embedded>
+    <a-assets>
+      <a-asset-item id="treeModel" src="path/to/tree.glb"></a-asset-item>
+      <a-asset-item id="houseModel" src="path/to/house.glb"></a-asset-item>
+    </a-assets>
+
+    <a-sky color="#87CEEB"></a-sky>
+    <a-plane rotation="-90 0 0" width="100" height="100" color="#7BC8A4" static-body></a-plane>
+
+    <!-- Unique 3D Models -->
+    <a-entity gltf-model="#treeModel" position="0 0 -5" scale="2 2 2" dynamic-body></a-entity>
+    <a-entity gltf-model="#houseModel" position="10 0 -10" scale="5 5 5" dynamic-body></a-entity>
+
+    <!-- Torus -->
+    <a-torus position="-5 1 -15" radius="2" radius-tubular="0.1" color="#FFC65D" dynamic-body></a-torus>
+
+    <!-- Dodecahedron -->
+    <a-dodecahedron position="15 1 -20" radius="1.5" color="#4CC3D9" dynamic-body></a-dodecahedron>
+
+    <a-camera position="0 2 5">
+      <a-cursor></a-cursor>
+    </a-camera>
+  </a-scene>
+  <script src="scripts.js"></script>
+</body>
+</html>
